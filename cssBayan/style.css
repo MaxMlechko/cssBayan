@@ -1,0 +1,23 @@
+body{
+    background-color: rgb(255, 225, 128);
+    margin: 0;
+}
+
+.container{
+    margin: 0px 15vw;
+}
+
+.meme{
+    padding: 10px 0px;
+    cursor: pointer;
+}
+
+.pic{
+    width: 40vw;
+    margin: 0 15vw;
+}
+
+.radio-button{
+    cursor: pointer;
+    display: block;
+}
