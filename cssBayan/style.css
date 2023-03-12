@@ -13,6 +13,26 @@ body{
     animation: colorChange 0.5s forwards;
 }
 
+.container:hover>form>.meme>.radio-button>.icon_off{
+    display: inline;
+}
+
+.container:hover>form>.meme>.radio-button>input:checked~.icon_off{
+    display: none;
+}
+
+.container:hover>form>.meme>.radio-button>input:checked~.icon_on{
+    display: inline;
+}
+
+.container>form>.meme:hover>.radio-button>input~.icon_on{
+    display: inline;
+}
+
+.container>form>.meme:hover>.radio-button>input~.icon_off{
+    display: none;
+}
+
 @keyframes colorChange{
     0%{
         color: black;
@@ -77,11 +97,16 @@ input{
     margin: 0;
 }
 
-input::after{
-    content: "";
-}
-
 h1, input:checked~span{
     color:aqua;
     text-shadow: 0.01em 0.01em 0.1em red, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+.meme_text{
+    display: inline-block;
+    width: 95%;
+}
+
+.icon_on, .icon_off{
+    display: none;
 }
