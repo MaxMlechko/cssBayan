@@ -1,10 +1,44 @@
 body{
-    background-color: rgb(255, 225, 128);
+    background-image: linear-gradient(to right, #870000, #830081);
     margin: 0;
+    font-size: 24px;
 }
 
 .container{
     margin: 0px 15vw;
+    animation: backColorChange 0.5s forwards;
+}
+
+.container:hover{
+    animation: colorChange 0.5s forwards;
+}
+
+@keyframes colorChange{
+    0%{
+        color: black;
+    }
+
+    100%{
+        color:aqua;
+        text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+    }
+}
+
+@keyframes backColorChange{
+    0%{
+        color:aqua;
+        text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+    }
+
+    100%{
+        color: black;
+    }
+}
+
+.divider{
+    border: solid 2px;
+    margin: 10px;
+    border-radius: 20%;
 }
 
 .meme{
@@ -15,9 +49,25 @@ body{
 .pic{
     width: 40vw;
     margin: 0 15vw;
+    display: none;
 }
 
 .radio-button{
     cursor: pointer;
     display: block;
+}
+
+.radio-button>input:checked~img, .meme:hover>.radio-button>img{
+    display: block;
+    animation: appear 1s;
+}
+
+@keyframes appear{
+    0%{
+        transform: scale(0);
+    }
+
+    100%{
+        transform: scale(1);
+    }
 }
