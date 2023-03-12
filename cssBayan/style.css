@@ -1,0 +1,179 @@
+body{
+    background-image: linear-gradient(to right, #870000, #830081);
+    margin: 0;
+    font-size: 2.2em;
+}
+
+.container{
+    margin: 0 15vw;
+    animation: backColorChange 0.5s forwards;
+}
+
+@keyframes colorChange{
+    0%{
+        color: black;
+    }
+
+    100%{
+        color:aqua;
+        text-shadow: 0.01em 0.01em 0.1em red, 0 0 1em blue, 0 0 0.2em blue;
+    }
+}
+
+@keyframes backColorChange{
+    0%{
+        color:aqua;
+        text-shadow: 0.01em 0.01em 0.1em red, 0 0 1em blue, 0 0 0.2em blue;
+    }
+
+    100%{
+        color: black;
+    }
+}
+
+.divider{
+    border: solid 0.05em;
+    margin: 0.5em;
+    border-radius: 20%;
+    color: #000;
+}
+
+.meme{
+    padding: 0.4em 0px;
+    cursor: pointer;
+}
+
+.pic{
+    width: 40vw;
+    margin: 0.5em 15vw;
+    display: none;
+}
+
+.radio-button{
+    cursor: pointer;
+    display: block;
+}
+
+.radio-button>input:checked~img{
+    display: block;
+    animation: appear 1s;
+}
+
+@keyframes iconAppear{
+    0%{
+        opacity: 0;;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+@media (hover: hover) {
+    
+    .container:hover{
+        animation: colorChange 0.5s forwards;
+    }
+    
+    .container:hover>form>.meme>.radio-button>.icon_off{
+        display: inline;
+        animation: iconAppear 1s;
+    }
+    
+    .container:hover>form>.meme>.radio-button>input:checked~.icon_off{
+        display: none;
+    }
+    
+    .container:hover>form>.meme>.radio-button>input:checked~.icon_on{
+        display: inline;
+        animation: iconAppear 1s;
+    }
+    
+    .container>form>.meme:hover>.radio-button>input~.icon_on{
+        display: inline;
+        animation: iconAppear 1s;
+
+    }
+    
+    .container>form>.meme:hover>.radio-button>input~.icon_off{
+        display: none;
+    }    
+
+    .meme:hover>.radio-button>img{
+        display: block;
+        animation: appear 1s;
+    }
+
+  }
+
+.meme:active{
+    color: black;
+    text-shadow: none;
+}
+
+.meme:active>.radio-button>.pic{
+    filter:contrast(0.5);
+}
+
+.meme:active>.radio-button>input:checked~.pic{
+    filter:contrast(1);
+}
+
+@keyframes appear{
+    0%{
+        transform: scale(0);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
+input{
+    appearance: none;
+    margin: 0;
+}
+
+h1, input:checked~span{
+    color:aqua;
+    text-shadow: 0.01em 0.01em 0.1em red, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+.meme_text{
+    display: inline-block;
+    width: 95%;
+}
+
+.icon_on, .icon_off{
+    display: none;
+}
+
+@media (max-width: 1920px){
+
+    body{
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 1180px){
+
+    body{
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 800px){
+
+    .meme_text{
+        width: 90%;
+    }
+
+}
+
+@media (max-width: 568px){
+
+    body{
+        font-size: 1em;
+    }
+
+}
