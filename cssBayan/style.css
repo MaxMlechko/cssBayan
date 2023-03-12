@@ -1,11 +1,11 @@
 body{
     background-image: linear-gradient(to right, #870000, #830081);
     margin: 0;
-    font-size: 24px;
+    font-size: 2em;
 }
 
 .container{
-    margin: 0px 15vw;
+    margin: 0 15vw;
     animation: backColorChange 0.5s forwards;
 }
 
@@ -20,14 +20,14 @@ body{
 
     100%{
         color:aqua;
-        text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+        text-shadow: 0.01em 0.01em 0.1em red, 0 0 1em blue, 0 0 0.2em blue;
     }
 }
 
 @keyframes backColorChange{
     0%{
         color:aqua;
-        text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+        text-shadow: 0.01em 0.01em 0.1em red, 0 0 1em blue, 0 0 0.2em blue;
     }
 
     100%{
@@ -36,19 +36,19 @@ body{
 }
 
 .divider{
-    border: solid 2px;
-    margin: 10px;
+    border: solid 0.05em;
+    margin: 0.5em;
     border-radius: 20%;
 }
 
 .meme{
-    padding: 10px 0px;
+    padding: 0.4em 0px;
     cursor: pointer;
 }
 
 .pic{
     width: 40vw;
-    margin: 0 15vw;
+    margin: 0.5em 15vw;
     display: none;
 }
 
@@ -70,4 +70,18 @@ body{
     100%{
         transform: scale(1);
     }
+}
+
+input{
+    appearance: none;
+    margin: 0;
+}
+
+input::after{
+    content: "";
+}
+
+h1, input:checked~span{
+    color:aqua;
+    text-shadow: 0.01em 0.01em 0.1em red, 0 0 1em blue, 0 0 0.2em blue;
 }
