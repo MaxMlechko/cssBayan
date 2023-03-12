@@ -1,36 +1,12 @@
 body{
     background-image: linear-gradient(to right, #870000, #830081);
     margin: 0;
-    font-size: 2em;
+    font-size: 2.2em;
 }
 
 .container{
     margin: 0 15vw;
     animation: backColorChange 0.5s forwards;
-}
-
-.container:hover{
-    animation: colorChange 0.5s forwards;
-}
-
-.container:hover>form>.meme>.radio-button>.icon_off{
-    display: inline;
-}
-
-.container:hover>form>.meme>.radio-button>input:checked~.icon_off{
-    display: none;
-}
-
-.container:hover>form>.meme>.radio-button>input:checked~.icon_on{
-    display: inline;
-}
-
-.container>form>.meme:hover>.radio-button>input~.icon_on{
-    display: inline;
-}
-
-.container>form>.meme:hover>.radio-button>input~.icon_off{
-    display: none;
 }
 
 @keyframes colorChange{
@@ -59,6 +35,7 @@ body{
     border: solid 0.05em;
     margin: 0.5em;
     border-radius: 20%;
+    color: #000;
 }
 
 .meme{
@@ -77,9 +54,69 @@ body{
     display: block;
 }
 
-.radio-button>input:checked~img, .meme:hover>.radio-button>img{
+.radio-button>input:checked~img{
     display: block;
     animation: appear 1s;
+}
+
+@keyframes iconAppear{
+    0%{
+        opacity: 0;;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+@media (hover: hover) {
+    
+    .container:hover{
+        animation: colorChange 0.5s forwards;
+    }
+    
+    .container:hover>form>.meme>.radio-button>.icon_off{
+        display: inline;
+        animation: iconAppear 1s;
+    }
+    
+    .container:hover>form>.meme>.radio-button>input:checked~.icon_off{
+        display: none;
+    }
+    
+    .container:hover>form>.meme>.radio-button>input:checked~.icon_on{
+        display: inline;
+        animation: iconAppear 1s;
+    }
+    
+    .container>form>.meme:hover>.radio-button>input~.icon_on{
+        display: inline;
+        animation: iconAppear 1s;
+
+    }
+    
+    .container>form>.meme:hover>.radio-button>input~.icon_off{
+        display: none;
+    }    
+
+    .meme:hover>.radio-button>img{
+        display: block;
+        animation: appear 1s;
+    }
+
+  }
+
+.meme:active{
+    color: black;
+    text-shadow: none;
+}
+
+.meme:active>.radio-button>.pic{
+    filter:contrast(0.5);
+}
+
+.meme:active>.radio-button>input:checked~.pic{
+    filter:contrast(1);
 }
 
 @keyframes appear{
@@ -109,4 +146,34 @@ h1, input:checked~span{
 
 .icon_on, .icon_off{
     display: none;
+}
+
+@media (max-width: 1920px){
+
+    body{
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 1180px){
+
+    body{
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 800px){
+
+    .meme_text{
+        width: 90%;
+    }
+
+}
+
+@media (max-width: 568px){
+
+    body{
+        font-size: 1em;
+    }
+
 }
